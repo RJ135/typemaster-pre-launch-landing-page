@@ -1,0 +1,80 @@
+@import 'normalize';
+@import 'grid-templates';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;900&display=swap');
+
+/* CUSTOM */
+/* VARIABLE */
+// COLORS
+$background-color : #FFFFFF;
+
+$primary-color :  #F16718;
+$primary-color-hover : #FF9B62;
+$secondary-color : #7B8BAD;
+$secondary-color-hover : #162542;
+
+$card-background-color : #E8EFF2; 
+
+// FONT
+$font-family : 'Barlow', sans-serif;
+$font-color : #162542;
+$font-size : 16px;
+
+$border-radius: 8px;
+
+ 
+// BASE
+html{
+    font-size: $font-size;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    font-family: $font-family;
+    box-sizing:border-box;
+    background-color: $background-color;
+    padding: 24px;
+}
+h1{
+    @include h1;
+}
+h2{
+    @include h2;
+}
+h3{
+    @include h3;
+}
+p{
+    @include text;
+}
+
+
+// BUTTON
+.btn{
+    @include button;
+}
+.btn--primary{
+    @include primary;
+}
+.btn--secondary{
+    @include secondary;
+}
+
+.icon{
+    @include icon;
+}
+.image{
+    border-radius: 1.25rem;
+    overflow: hidden;
+    .orange-overlay{
+        background: #F16718;
+        width: 100%;
+        height: 100%;
+        img{
+            opacity: 0.2;
+        }
+    }
+    &__src{
+        @include image-src;
+    }
+}

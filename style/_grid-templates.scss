@@ -1,0 +1,15 @@
+
+// Grid system 12 columns by default
+@mixin grid( $gap-size, $column-size ){
+    display: grid;
+    grid-template-columns: repeat(12 , minmax($column-size,1fr));
+    gap: $gap-size;
+}
+
+@mixin tablet-template {
+    @include grid($gap-size : 0.625rem , $column-size : 3rem );
+}
+
+@mixin desktop-template {
+    @include grid($gap-size : 1.875rem , $column-size : 4.06rem ); 
+} 
