@@ -1,15 +1,24 @@
 // TITLES
+@mixin title {
+    color: #162542;
+    text-transform: uppercase;
+}
 @mixin h1 {
-    font-size: 56px;
+    @include title;
+    //font-size: 48px; 56px tablet + desktop size
+    font-size: 48px;
 	font-weight: 900;
-	line-height: 56px ;
+	//line-height: 48px ; 56px tablet + desktop size
+	line-height: 48px ;
 }
 @mixin h2 {
+    @include title;
     font-size: 32px;
 	font-weight: 900;
 	line-height: 36px ;
 }
 @mixin h3 {
+    @include title;
     font-size: 24px;
 	font-weight: 900;
 	line-height: 28px ;
@@ -22,10 +31,10 @@
 }
 
 // BUTTON
-@mixin button {
+@mixin button ($pad-top-bottom : 1rem, $pad-left-right : 1.6rem ) {
     //font-family: 'Barlow', sans-serif;
 	display: inline-block;
-	padding: 1rem 1.6rem;
+	padding: $pad-top-bottom $pad-left-right;
 	border-radius: 0.6rem;
 	font-weight:600;
 	font-size:16px;

@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;900&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -342,14 +342,18 @@ template {
   display: none;
 }
 
+/* @import 'mixins'; */
 /* CUSTOM */
 /* VARIABLE */
+html, body {
+  overflow-x: hidden;
+}
+
 html {
   font-size: 16px;
 }
 
 body {
-  height: 100vh;
   width: 100%;
   font-family: "Barlow", sans-serif;
   -webkit-box-sizing: border-box;
@@ -358,80 +362,184 @@ body {
   padding: 24px;
 }
 
-h1 {
-  font-size: 56px;
-  font-weight: 900;
-  line-height: 56px;
-}
-
-h2 {
-  font-size: 32px;
-  font-weight: 900;
-  line-height: 36px;
-}
-
-h3 {
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 28px;
-}
-
 p {
   color: #7B8BAD;
   font-size: 16px;
   line-height: 26px;
+  font-weight: 500;
 }
 
-.btn {
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* TEST h1{
+    @include h1;
+}
+h2{
+    @include h2;
+}
+h3{
+    @include h3;
+}
+p{
+    @include text;
+}
+// BUTTON
+.btn{
+    @include button;
+}
+.btn--primary{
+    @include primary;
+}
+.btn--secondary{
+    @include secondary;
+}
+
+.icon{
+    @include icon;
+}
+.image{
+    border-radius: 1.25rem;
+    overflow: hidden;
+    &__src{
+        @include image-src;
+    }
+    .orange-overlay{
+        background: #F16718;
+        width: 100%;
+        height: 100%;
+        img{
+            opacity: 0.2;
+        }
+    }
+    &-keyboard{
+        min-width: 372px;
+        min-height: 331px;
+        max-width: 540px;
+        max-height: 480px;
+    }
+} */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 200px;
+}
+
+.header__logo {
+  width: 40px;
+  height: 40px;
+  background-color: #F16718;
+}
+
+.header__logo img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.header__btn {
+  background: #E8EFF2;
+  color: #162542;
+  padding: .68rem .9rem;
   display: inline-block;
-  padding: 1rem 1.6rem;
-  border-radius: 0.6rem;
-  font-weight: 600;
+  border-radius: .6rem;
+  font-weight: 700;
   font-size: 16px;
   border: none;
-  color: white;
   line-height: 26px;
   text-transform: uppercase;
 }
 
-.btn--primary {
-  background: #F16718;
-}
-
-.btn--primary:hover {
-  background: #FF9B62;
-}
-
-.btn--secondary {
-  background: #E8EFF2;
-  color: #162542;
-}
-
-.btn--secondary:hover {
+.header__btn:hover {
   background: #162542;
   color: #ffffff;
 }
 
-.icon {
+.banner {
+  /* border: 3px dashed red; */
+}
+
+.banner__mainTitle {
+  color: #162542;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 48px;
+}
+
+.trigger {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 32px 0 64px;
+}
+
+.trigger__btn {
   background: #F16718;
-  border-radius: 16px;
-  width: 65px;
-  height: 65px;
-  margin: 0.5rem;
+  color: #FFFFFF;
+  padding: .68rem .9rem;
+  display: inline;
+  border-radius: .6rem;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  line-height: 26px;
+  text-transform: uppercase;
+  width: 151px;
+  height: 48px;
+}
+
+.trigger__btn:hover {
+  background: #FF9B62;
+}
+
+.trigger__date {
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .68rem .9rem;
 }
 
 .image {
   border-radius: 1.25rem;
+  margin: 1.5rem 0;
   overflow: hidden;
+  /* &__src{
+        width: 372px;
+        height: 331px;
+        object-fit: cover;
+        display: block;
+    } */
+}
+
+.image-keyboard {
+  width: 372px;
+  height: 331px;
+}
+
+.image-keyboard__src {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 
 .image .orange-overlay {
@@ -442,13 +550,5 @@ p {
 
 .image .orange-overlay img {
   opacity: 0.2;
-}
-
-.image__src {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
 }
 /*# sourceMappingURL=style.css.map */
