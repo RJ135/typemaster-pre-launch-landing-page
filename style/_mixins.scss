@@ -69,7 +69,11 @@
     border-radius: 16px;
     width: 65px;
     height: 65px;
-    margin: 0.5rem;
+    img{
+        padding: 1.5rem;
+        width: 100%;
+        height: auto;
+    }
 }
 
 // IMAGE
