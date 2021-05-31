@@ -2,7 +2,7 @@
 // Grid system 12 columns by default
 @mixin grid( $gap-size, $column-size ){
     display: grid;
-    grid-template-columns: repeat(12 , minmax($column-size,1fr));
+    grid-template-columns: repeat(12 , $column-size);
     gap: $gap-size;
 }
 

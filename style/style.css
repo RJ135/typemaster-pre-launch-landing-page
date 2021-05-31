@@ -436,6 +436,7 @@ p{
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-width: 200px;
+  grid-area: Hd;
 }
 
 .header__logo {
@@ -469,6 +470,7 @@ p{
 
 .banner {
   /* border: 3px dashed red; */
+  grid-area: Ban;
 }
 
 .banner__mainTitle {
@@ -490,6 +492,7 @@ p{
       -ms-flex-align: center;
           align-items: center;
   margin: 32px 0 64px;
+  grid-area: Trigger;
 }
 
 .trigger__btn {
@@ -524,6 +527,7 @@ p{
   display: flex;
   direction: rtl;
   gap: 1.5rem;
+  grid-area: Gal;
 }
 
 .image {
@@ -593,6 +597,7 @@ p{
       -ms-flex-align: center;
           align-items: center;
   margin: 4.6rem auto;
+  grid-area: Int;
 }
 
 .intro__title {
@@ -611,9 +616,11 @@ p{
 
 .feature {
   /* background-color: lightcyan; */
+  grid-area: Feat;
 }
 
 .feature__part {
+  grid-area: Part;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -671,6 +678,7 @@ p{
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  grid-area: Cop;
 }
 
 .copyright__strong {
@@ -679,5 +687,30 @@ p{
 
 .copyright__separator {
   margin: 0 0.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: #f2efe9;
+  }
+  .main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (3rem)[12];
+        grid-template-columns: repeat(12, 3rem);
+    gap: 0.625rem;
+    place-content: center center;
+        grid-template-areas: "Hd Hd Hd Hd Hd Hd Hd Hd Hd Hd Hd Hd" "Ban Ban Ban Ban Ban Ban Ban Ban Ban Ban Ban Ban" "Gal Gal Gal Gal Gal Gal Gal Gal Gal Gal Gal Gal" "Int Int Int Int Int Int Int Int Int Int Int Int" "Feat Feat Feat Feat Feat Feat Feat Feat Feat Feat Feat Feat" ". . . . . Cop Cop . . . . . ";
+  }
+  .banner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -105,6 +105,7 @@ p{
     align-items: center;
     justify-content: space-between;
     min-width: 200px;
+    grid-area: Hd;
     &__logo{
         //by default
         width: 40px;
@@ -138,6 +139,7 @@ p{
 //BANNER
 .banner{
     /* border: 3px dashed red; */
+    grid-area: Ban;
     &__mainTitle{
         color: #162542;
         text-transform: uppercase;
@@ -152,6 +154,7 @@ p{
     justify-content: space-between;
     align-items: center;
     margin: 32px 0 64px;
+    grid-area: Trigger;
     &__btn{
         background:#F16718;
         color: $background-color;
@@ -183,6 +186,7 @@ p{
     display: flex;
     direction: rtl;
     gap: 1.5rem;
+    grid-area: Gal;
 }
 
 .image{
@@ -239,6 +243,7 @@ p{
     flex-direction: column;
     align-items: center;
     margin: 4.6rem auto;
+    grid-area: Int;
     &__title{
         text-align: center;
         width: 255px;
@@ -256,7 +261,9 @@ p{
 // FEATURE
 .feature{
     /* background-color: lightcyan; */
+    grid-area: Feat;
     &__part{
+        grid-area: Part;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -294,10 +301,37 @@ p{
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
+    grid-area: Cop;
     &__strong{
         font-weight: 700;
     }
     &__separator {
         margin: 0 0.25rem;
       }
+}
+
+// MEDIA QUERIES
+
+// TABLET DEVICE
+@media screen and ( min-width : 768px){
+    body{
+        background-color: #f2efe9;
+    }
+    .main{
+        @include tablet-template;
+        place-content: center center;
+        grid-template-areas: 
+            "Hd Hd Hd Hd Hd Hd Hd Hd Hd Hd Hd Hd"
+            "Ban Ban Ban Ban Ban Ban Ban Ban Ban Ban Ban Ban"
+            "Gal Gal Gal Gal Gal Gal Gal Gal Gal Gal Gal Gal"
+            "Int Int Int Int Int Int Int Int Int Int Int Int"
+            "Feat Feat Feat Feat Feat Feat Feat Feat Feat Feat Feat Feat"
+            ". . . . . Cop Cop . . . . . "
+        ;
+    }
+    .banner {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+    }
 }
