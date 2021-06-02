@@ -105,7 +105,6 @@ p{
     align-items: center;
     justify-content: space-between;
     min-width: 200px;
-    grid-area: Hd;
     &__logo{
         //by default
         width: 40px;
@@ -138,8 +137,7 @@ p{
 
 //BANNER
 .banner{
-    /* border: 3px dashed red; */
-    grid-area: Ban;
+    margin-top: 4rem;
     &__mainTitle{
         color: #162542;
         text-transform: uppercase;
@@ -154,7 +152,6 @@ p{
     justify-content: space-between;
     align-items: center;
     margin: 32px 0 64px;
-    grid-area: Trigger;
     &__btn{
         background:#F16718;
         color: $background-color;
@@ -182,11 +179,9 @@ p{
 
 // GALLERY
 .gallery{
-    /* border: 3px dashed greenyellow; */
     display: flex;
     direction: rtl;
     gap: 1.5rem;
-    grid-area: Gal;
 }
 
 .image{
@@ -243,7 +238,6 @@ p{
     flex-direction: column;
     align-items: center;
     margin: 4.6rem auto;
-    grid-area: Int;
     &__title{
         text-align: center;
         width: 255px;
@@ -260,10 +254,7 @@ p{
 
 // FEATURE
 .feature{
-    /* background-color: lightcyan; */
-    grid-area: Feat;
     &__part{
-        grid-area: Part;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -301,7 +292,6 @@ p{
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    grid-area: Cop;
     &__strong{
         font-weight: 700;
     }
@@ -315,23 +305,81 @@ p{
 // TABLET DEVICE
 @media screen and ( min-width : 768px){
     body{
-        background-color: #f2efe9;
+        padding: 2.5rem;
     }
-    .main{
-        @include tablet-template;
-        place-content: center center;
-        grid-template-areas: 
-            "Hd Hd Hd Hd Hd Hd Hd Hd Hd Hd Hd Hd"
-            "Ban Ban Ban Ban Ban Ban Ban Ban Ban Ban Ban Ban"
-            "Gal Gal Gal Gal Gal Gal Gal Gal Gal Gal Gal Gal"
-            "Int Int Int Int Int Int Int Int Int Int Int Int"
-            "Feat Feat Feat Feat Feat Feat Feat Feat Feat Feat Feat Feat"
-            ". . . . . Cop Cop . . . . . "
-        ;
+    .image{
+        &-keyboard{
+            margin-bottom: 2.5rem;
+            min-width: 478px;
+            min-height: 425px;
+        }
+        &-phone-and-keyboard{
+            min-width: 214px;
+            min-height: 320px;
+        }
+        &-glass-and-keyboard{
+            min-width: 445px;
+            min-height: 320px;
+        }
     }
+    // TODO
     .banner {
+        margin-top: 3.87rem;
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        align-content: center;
+    }
+    .headlines{
+        margin-right: 4rem;
+    }
+    .trigger{
+        display: flex;
+        width: 100%;
+        &__btn{
+            width: 175px;
+            height: 58px;
+        }
+        &__date{
+            width: 175px;
+            text-align: center;
+        }
+    }
+    .intro{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &__title{
+            text-align: left;
+        }
+        &__description{
+            text-align: left;
+            width: 398px;
+        }
+    }
+    .feature{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 142px;
+        &__part{
+            width: 281px;
+            max-width: 100%;
+            >*{
+                margin-right: auto;
+                text-align: left;
+            }
+        }
+        
+        
+    }
+
+}
+
+// DESKTOP DEVICE
+@media screen and ( min-width : 1440px){
+    body{
+        padding: 2.5rem 10.3rem;
     }
 }
