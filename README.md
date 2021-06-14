@@ -1,4 +1,3 @@
-( in progress )
 # Frontend Mentor - Typemaster pre-launch landing page
 
 ![127 0 0 1_5500_(test Desktop)](https://user-images.githubusercontent.com/48568104/121972363-2d52ba80-cd7b-11eb-81a2-1e35a6c21cf2.png)
